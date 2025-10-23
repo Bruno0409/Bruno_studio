@@ -76,7 +76,6 @@
 
 .btn-primary:hover {
     background-color: var(--primary);
-    filter: brightness(80%);
     color: var(--light);
 }
 
@@ -144,7 +143,7 @@
         position: relative;
         min-height: 650px;
     }
-    
+
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
@@ -166,7 +165,7 @@
 
 /*** About ***/
 .about {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/fundo.png) left center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/img4.png) left center no-repeat;
     background-size: cover;
     border-radius: 8px;
 }
@@ -518,27 +517,27 @@
         width: 100%;
         padding-left: 38px;
     }
-    
+
     .experience .timeline .timeline-item.left {
         padding-right: 0;
     }
-    
+
     .experience .timeline .timeline-item.right {
         left: 0%;
         padding-left: 38px;
     }
 
-    .experience .timeline .timeline-item.left::after, 
+    .experience .timeline .timeline-item.left::after,
     .experience .timeline .timeline-item.right::after {
         left: 0;
     }
-    
+
     .experience .timeline .timeline-item.left::before,
     .experience .timeline .timeline-item.right::before {
         left: 18px;
         border-color: transparent #dddddd transparent transparent;
     }
-    
+
     .experience .timeline .timeline-item.left .timeline-date,
     .experience .timeline .timeline-item.right .timeline-date {
         position: relative;
@@ -548,7 +547,7 @@
         text-align: left;
         margin-bottom: 10px;
     }
-    
+
     .experience .timeline .timeline-item.left .timeline-text,
     .experience .timeline .timeline-item.right .timeline-text {
         border-right: none;
@@ -566,3 +565,48 @@ padding: 20px;
   justify-content: center;
 }
 
+.botao {
+    position: relative;
+    background: #ffffff; /* Fundo branco */
+    border: none; /* Sem borda */
+    padding: 20px 40px;
+    font-size: 24px;
+    border-radius: 50px; /* Borda arredondada */
+    cursor: pointer;
+    z-index: 1;
+    color: #30355c; /* Texto azul sólido */
+    overflow: hidden;
+    text-align: center; /* Centraliza o texto */
+    font-weight: bold;
+    transition: none; /* Desabilitar transições indesejadas */
+}
+
+/* Sobrescreve o estilo de hover */
+.botao:hover {
+    color: #30355c !important; /* Garante que a cor do texto continue azul */
+    background: #ffffff; /* Garante que o fundo continue branco */
+    border: none !important; /* Garante que não há borda no hover */
+}
+
+.botaoescuro {
+    position: relative;
+    background: #30355c; /* Fundo branco */
+    border: none; /* Sem borda */
+    padding: 20px 40px;
+    font-size: 24px;
+    border-radius: 50px; /* Borda arredondada */
+    cursor: pointer;
+    z-index: 1;
+    color: #ffffff; /* Texto azul sólido */
+    overflow: hidden;
+    text-align: center; /* Centraliza o texto */
+    font-weight: bold;
+    transition: none; /* Desabilitar transições indesejadas */
+}
+
+/* Sobrescreve o estilo de hover */
+.botaoescuro:hover {
+    color: #ffffff !important; /* Garante que a cor do texto continue azul */
+    background: #30355c; /* Garante que o fundo continue branco */
+    border: none !important; /* Garante que não há borda no hover */
+}
