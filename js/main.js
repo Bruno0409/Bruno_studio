@@ -85,3 +85,44 @@ $(document).ready(function () {
     owl.trigger("next.owl.carousel");
   });
 });
+
+// Função para lidar com o envio do formulário
+
+const mobileInput = document.getElementById("mobile");
+
+mobileInput.addEventListener("input", function (e) {
+  let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
+
+  // Limita o comprimento para 11 dígitos (sem contar a formatação)
+  if (value.length > 11) {
+    value = value.slice(0, 11); // Impede que o usuário digite mais de 11 números
+  }
+
+  // Aplica a formatação conforme o número de caracteres digitados
+  if (value.length <= 2) {
+    value = value.replace(/(\d{2})/, "($1) "); // Formata o código de área
+  } else if (value.length <= 6) {
+    value = value.replace(/(\d{2})(\d{5})/, "($1) $2"); // Aplica o espaço depois de 6 dígitos
+  } else {
+    value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3"); // Formata o número completo
+  }
+
+  // Atualiza o valor no campo de entrada com a formatação em tempo real
+  e.target.value = value;
+});
+
+mobileInput.addEventListener("keydown", function (e) {
+  let value = mobileInput.value;
+
+  // Permite apagar corretamente os caracteres
+  if (e.key === "Backspace" || e.key === "Delete") {
+    if (
+      value.length === 3 ||
+      value.length === 6 ||
+      value.length === 9 ||
+      value.length === 11
+    ) {
+      mobileInput.value = value.slice(0, -1); // Remove o último caractere
+    }
+  }
+});
