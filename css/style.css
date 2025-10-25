@@ -165,7 +165,7 @@
 
 /*** About ***/
 .about {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/img4.png) left center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/img4.webp) left center no-repeat;
     background-size: cover;
     border-radius: 8px;
 }
@@ -585,7 +585,7 @@ padding: 20px;
     border: none; /* Sem borda */
     padding: 20px 40px;
     font-size: 24px;
-    border-radius: 50px; /* Borda arredondada */
+    border-radius: 8px; /* Borda arredondada */
     cursor: pointer;
     z-index: 1;
     color: #30355c; /* Texto azul sólido */
@@ -608,7 +608,7 @@ padding: 20px;
     border: none; /* Sem borda */
     padding: 20px 40px;
     font-size: 24px;
-    border-radius: 50px; /* Borda arredondada */
+    border-radius: 8px; /* Borda arredondada */
     cursor: pointer;
     z-index: 1;
     color: #ffffff; /* Texto azul sólido */
@@ -625,3 +625,81 @@ padding: 20px;
     border: none !important; /* Garante que não há borda no hover */
 }
 
+/* Estilo básico do botão */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px; /* Ajuste a posição conforme necessário */
+    right: 20px;  /* Ajuste a posição conforme necessário */
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: white;
+    width: 60px; /* Tamanho do botão */
+    height: 60px; /* Tamanho do botão */
+    border-radius: 50%; /* Tornar o botão redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Tamanho do ícone */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombras */
+    transition: all 0.3s ease;
+    z-index: 9999; /* Garante que o botão fique acima de outros elementos */
+}
+
+/* Animação de borda piscando */
+@keyframes pulse-border {
+    0% {
+        border: 3px solid #25D366;
+    }
+    50% {
+        border: 3px solid #128C7E; /* Cor mais escura do WhatsApp */
+    }
+    100% {
+        border: 3px solid #25D366;
+    }
+}
+
+/* Estilo básico do botão do WhatsApp */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 100px; /* Ajustado para subir o botão, agora está 80px do fundo */
+    right: 20px;  /* Continua no canto direito */
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: white;
+    width: 60px; /* Tamanho do botão */
+    height: 60px; /* Tamanho do botão */
+    border-radius: 50%; /* Tornar o botão redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Tamanho do ícone */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombras */
+    transition: all 0.3s ease;
+    z-index: 9999; /* Garante que o botão fique acima de outros elementos */
+}
+
+/* Animação de borda piscando */
+@keyframes pulse-border {
+    0% {
+        border: 3px solid #25D366;
+    }
+    50% {
+        border: 3px solid #128C7E; /* Cor mais escura do WhatsApp */
+    }
+    100% {
+        border: 3px solid #25D366;
+    }
+}
+
+.btn-whatsapp:hover {
+    animation: pulse-border 1s infinite; /* Animação que faz a borda piscar */
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Ícone do WhatsApp */
+.btn-whatsapp i {
+    font-size: 28px; /* Ajuste o tamanho do ícone */
+}
+
+/* Efeito de clique (hover) */
+.btn-whatsapp:active {
+    transform: scale(1); /* Remover o efeito de aumento ao clicar */
+}
