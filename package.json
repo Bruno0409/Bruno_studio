@@ -1,0 +1,8 @@
+{
+  "scripts": {
+  "limparcss": "purgecss --css css/style.css --content index.html --output css/ && mv css/style.purged.css css/style.css"
+},
+  "devDependencies": {
+    "purgecss": "^7.0.2"
+  }
+}
