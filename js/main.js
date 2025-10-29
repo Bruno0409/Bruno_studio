@@ -86,7 +86,6 @@ $(document).ready(function () {
     }
   })
 
-  // Botões personalizados
   $('.btn-prev-project').click(function () {
     owl.trigger('prev.owl.carousel')
   })
@@ -101,19 +100,39 @@ $(document).ready(function () {
   const mobileInput = document.getElementById('mobile')
   if (mobileInput) {
     mobileInput.addEventListener('input', function (e) {
-      let value = e.target.value.replace(/\D/g, '') // Remove tudo que não for número
-      if (value.length > 11) value = value.slice(0, 11) // Limita a 11 dígitos
+      let value = e.target.value
 
-      // Aplica a formatação
-      if (value.length > 6) {
-        value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3')
-      } else if (value.length > 2) {
-        value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2')
-      } else if (value.length > 0) {
-        value = value.replace(/(\d{0,2})/, '($1')
+      let numbersOnly = value.replace(/\D/g, '')
+
+      if (numbersOnly.length === 0) {
+        e.target.value = ''
+        return
+      }
+
+      if (numbersOnly.length > 11) {
+        numbersOnly = numbersOnly.slice(0, 11)
+      }
+
+      if (numbersOnly.length > 6) {
+        value = numbersOnly.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3')
+      } else if (numbersOnly.length > 2) {
+        value = numbersOnly.replace(/(\d{2})(\d{0,5})/, '($1) $2')
+      } else if (numbersOnly.length > 0) {
+        value = numbersOnly.replace(/(\d{0,2})/, '($1')
       }
 
       e.target.value = value
+    })
+
+    mobileInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Backspace' || e.key === 'Delete') {
+        let value = mobileInput.value
+
+        if (value.length > 0) {
+          value = value.slice(0, -1)
+          mobileInput.value = value
+        }
+      }
     })
   }
 
