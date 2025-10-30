@@ -1,8 +1,10 @@
 {
   "scripts": {
-  "limparcss": "purgecss --css css/style.css --content index.html --output css/ && mv css/style.purged.css css/style.css"
-},
+    "limparcss": "purgecss --css css/style.css --content index.html --output css/ && mv css/style.purged.css css/style.css",
+    "build": "npm run limparcss"
+  },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "purgecss": "^7.0.2"
   }
 }
