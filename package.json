@@ -1,8 +1,10 @@
 {
   "scripts": {
-  "limparcss": "purgecss --css css/style.css --content index.html --output css/ && mv css/style.purged.css css/style.css"
-},
+    "limparcss": "purgecss --css css/style.css --content index.html --output css/ && mv css/style.purged.css css/style.css"
+  },
   "devDependencies": {
+    "cssnano": "^7.1.2",
+    "postcss": "^8.5.6",
     "purgecss": "^7.0.2"
   }
 }
