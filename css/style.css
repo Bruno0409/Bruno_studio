@@ -621,3 +621,52 @@ padding: 20px;
 .botaoescuro:hover {
     border: none !important;
 }
+
+
+/* Cookies Botão */
+
+.cookie-card {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(128, 128, 128, 0.7);
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.cookie-card p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.cookie-card a {
+  color: #30355c;
+  text-decoration: none;
+}
+
+.cookie-card button {
+  background-color: #30355c;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cookie-card button:hover {
+  background-color: #1e244d;
+}
+

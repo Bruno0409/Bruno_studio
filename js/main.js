@@ -151,3 +151,28 @@ $(document).ready(function () {
   const yearEl = document.getElementById('year')
   if (yearEl) yearEl.textContent = new Date().getFullYear()
 })
+
+// -------------------------
+// COOKIE
+// -------------------------
+
+// Esperar a página carregar completamente antes de rodar o script
+document.addEventListener('DOMContentLoaded', function () {
+  // Referência para o botão e o card
+  const acceptButton = document.getElementById('accept-cookies')
+  const consentCard = document.getElementById('cookie-consent-card')
+
+  // Se o botão for clicado
+  acceptButton.addEventListener('click', function () {
+    // Salvar a aceitação nos cookies (ou localStorage)
+    localStorage.setItem('cookies-accepted', 'true')
+
+    // Esconder o card após o clique
+    consentCard.style.display = 'none'
+  })
+
+  // Verificar se o usuário já aceitou os cookies
+  if (localStorage.getItem('cookies-accepted') === 'true') {
+    consentCard.style.display = 'none' // Esconde o card se já foi aceito
+  }
+})
