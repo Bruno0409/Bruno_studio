@@ -125,20 +125,6 @@
     z-index: 1;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    width: 15%;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 3.5rem;
-    background-color: var(--primary);
-    border: 15px solid var(--primary);
-}
-
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
@@ -163,64 +149,6 @@
     border-color: rgba(0, 0, 0, .03) !important;
 }
 
-
-
-
-.btn-play {
-    position: relative;
-    display: block;
-    box-sizing: content-box;
-    width: 36px;
-    height: 46px;
-    border-radius: 100%;
-    border: none;
-    outline: none !important;
-    padding: 18px 20px 20px 28px;
-    background: var(--primary);
-}
-
-.btn-play:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 90px;
-    height: 90px;
-    background: var(--primary);
-    border-radius: 100%;
-    animation: pulse-border 1500ms ease-out infinite;
-}
-
-.btn-play:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 90px;
-    height: 90px;
-    background: var(--primary);
-    border-radius: 100%;
-    transition: all 200ms;
-}
-
-.btn-play span {
-    display: block;
-    position: relative;
-    z-index: 3;
-    width: 0;
-    height: 0;
-    left: 3px;
-    border-left: 30px solid #FFFFFF;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
-}
-
 @keyframes pulse-border {
     0% {
         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
@@ -231,17 +159,6 @@
         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
         opacity: 0;
     }
-}
-
-.modal-video .modal-dialog {
-    position: relative;
-    max-width: 800px;
-    margin: 60px auto 0 auto;
-}
-
-.modal-video .modal-body {
-    position: relative;
-    padding: 0px;
 }
 
 
