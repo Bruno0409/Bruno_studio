@@ -544,22 +544,24 @@ padding: 20px;
 
 .cookie-card {
   position: fixed;
-  bottom: 20px;
+  bottom: 15px; /* Posição mais alta */
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(128, 128, 128, 0.7);
+  background-color: rgba(39, 39, 39, 0.9);
   color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 500px;
+  padding: 6px 12px; /* Padding bem reduzido */
+  border-radius: 4px; /* Bordas mais sutis */
+  width: 60%; /* Menor largura */
+  max-width: 300px; /* Largura máxima mais estreita */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  justify-content: flex-start; /* Alinhado no topo */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
   z-index: 9999;
+  font-size: 0.75rem; /* Fonte ainda menor */
 }
+
 
 .cookie-card p {
   margin-bottom: 10px;
@@ -568,20 +570,21 @@ padding: 20px;
 }
 
 .cookie-card a {
-  color: #30355c;
+  color: #a9a9a9;
   text-decoration: none;
 }
 
 .cookie-card button {
   background-color: #30355c;
   border: none;
-  padding: 10px 20px;
+  padding: 6px 12px; /* Reduzido o padding */
   color: #ffffff;
-  font-size: 14px;
-  border-radius: 5px;
+  font-size: 12px; /* Fonte menor */
+  border-radius: 4px; /* Bordas mais suaves */
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 
 .cookie-card button:hover {
   background-color: #1e244d;

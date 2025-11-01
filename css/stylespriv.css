@@ -95,7 +95,6 @@ footer button:hover {
   text-align: center;
   z-index: 9999;
   font-size: 1.1rem;
-  border-top: 5px solid #ffbf00;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
