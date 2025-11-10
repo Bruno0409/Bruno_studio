@@ -294,15 +294,13 @@
 
 .copyright {
     color: #B0B9AE;
-}
-
-.copyright {
     background: #111111;
 }
 
 .copyright a:hover {
     color: var(--primary) !important;
 }
+
 
 
 /** teste **/
