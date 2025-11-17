@@ -6,6 +6,7 @@
     --dark: #1C2035;
 }
 
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -293,7 +294,7 @@
 }
 
 .copyright {
-    color: #B0B9AE;
+    color: var(--light);
     background: #111111;
 }
 
@@ -588,3 +589,67 @@ padding: 20px;
   background-color: #1e244d;
 }
 
+
+
+/* Controle imagem portfolio */
+
+.topoimagem {
+  object-fit: cover;
+    object-position: top;
+}
+
+
+/*****************************************************
+ * BOTÃO WHATSAPP
+ *****************************************************/
+
+/* Estilo para o botão flutuante */
+.whatsapp-float-btn {
+    position: fixed;
+    bottom: 100px; /* Distância do fundo da tela */
+    right: 20px;  /* Distância da lateral direita */
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: white;
+    width: 60px; /* Tamanho fixo do botão */
+    height: 60px; /* Tamanho fixo do botão */
+    border-radius: 50%;  /* Garantir o formato redondo */
+    font-size: 30px;  /* Tamanho do ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;  /* Remove o sublinhado do link */
+    animation: pulse 1.5s infinite; /* Efeito de pulsação */
+    z-index: 1000;
+}
+
+/* Efeito de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamanho normal */
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta um pouco */
+    }
+    100% {
+        transform: scale(1); /* Volta ao normal */
+    }
+}
+
+/* Ícone do WhatsApp */
+.whatsapp-float-btn i {
+    font-size: 35px; /* Tamanho do ícone */
+    color: white; /* Garante que o ícone fique sempre branco */
+}
+
+/* Garantindo que o link e ícone não sofram hover */
+.whatsapp-float-btn:hover,
+.whatsapp-float-btn:active {
+    background-color: #25D366; /* Não altera cor no hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Não altera sombra no hover */
+}
+
+.whatsapp-float-btn:hover i,
+.whatsapp-float-btn:active i {
+    color: white; /* Garante que o ícone não mude de cor ao passar o mouse */
+}
