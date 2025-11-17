@@ -6,6 +6,9 @@
     --dark: #1C2035;
 }
 
+.maozinha {
+  color: var(--primary);
+}
 
 .back-to-top {
     position: fixed;
@@ -200,7 +203,7 @@
 /* Ajustando a altura da imagem */
 .project-item img {
     width: 100%;
-    height: 400px;
+    height: 600px;
     object-fit: cover;
 }
 
@@ -230,6 +233,7 @@
     justify-content: space-between;
     height: 100%;
 }
+
 
 
 /*** Team ***/
@@ -265,7 +269,7 @@
 
 /*** Footer ***/
 .footer {
-    color: #B0B9AE;
+    color: var(--light);
 }
 
 .footer .btn.btn-link {
@@ -273,7 +277,7 @@
     margin-bottom: 5px;
     padding: 0;
     text-align: left;
-    color: #B0B9AE;
+    color: var(--light);
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
@@ -300,6 +304,10 @@
 
 .copyright a:hover {
     color: var(--primary) !important;
+}
+
+.whats-link {
+    color: #fff !important;
 }
 
 
@@ -481,7 +489,7 @@
     }
 }
 
-.btn-prev-project,
+/* .btn-prev-project,
 .btn-next-project {
 padding: 20px;
   width: 45px;
@@ -489,7 +497,7 @@ padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* Botão claro */
 .botao,

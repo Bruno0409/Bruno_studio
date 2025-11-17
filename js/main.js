@@ -67,7 +67,9 @@
 // =========================
 // DOCUMENT READY
 // =========================
+
 $(document).ready(function () {
+  
   // -------------------------
   // PROJECT & TESTIMONIAL CAROUSEL
   // -------------------------
