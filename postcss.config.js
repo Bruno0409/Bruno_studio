@@ -1,9 +1,15 @@
 module.exports = {
   plugins: [
-    // Aqui você adicionará o PurgeCSS
+    require('autoprefixer'),
     require('@fullhuman/postcss-purgecss')({
-      content: ['./src/**/*.html', './src/**/*.js'],  // Diretórios onde o PurgeCSS vai buscar as classes usadas
-      safelist: [/^bg-/, /^text-/]  // Se você quiser manter algumas classes (por exemplo, classes de fundo ou de texto)
-    }),
-  ],
-};
+      content: [
+        './*.html', // Caminho para o arquivo HTML na raiz
+        './js/**/*.js' // Caminho para os arquivos JS na pasta 'js'
+      ],
+      safelist: [
+        /^bg-/, // Para manter todas as classes que começam com 'bg-'
+        /^text-/ // Para manter todas as classes que começam com 'text-'
+      ]
+    })
+  ]
+}
