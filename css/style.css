@@ -132,7 +132,7 @@
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
-        min-height: 650px;
+        min-height: 750px;
     }
 
     #header-carousel .carousel-item img {
@@ -203,7 +203,7 @@
 /* Ajustando a altura da imagem */
 .project-item img {
     width: 100%;
-    height: 600px;
+    height: 450px;
     object-fit: cover;
 }
 
