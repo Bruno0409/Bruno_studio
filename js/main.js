@@ -69,7 +69,6 @@
 // =========================
 
 $(document).ready(function () {
-  
   // -------------------------
   // PROJECT & TESTIMONIAL CAROUSEL
   // -------------------------
@@ -155,26 +154,54 @@ $(document).ready(function () {
 })
 
 // -------------------------
-// COOKIE
+// COOKIE / LGPD
 // -------------------------
 
-// Esperar a página carregar completamente antes de rodar o script
+const consentKey = 'cookieConsent'
+let gaCarregado = false
+
+function carregarGoogleAnalytics() {
+  if (gaCarregado) return
+  gaCarregado = true
+
+  const script = document.createElement('script')
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-B5LVNNFY85'
+  script.async = true
+  document.head.appendChild(script)
+
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+  gtag('config', 'G-B5LVNNFY85', {
+    anonymize_ip: true
+  })
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Referência para o botão e o card
-  const acceptButton = document.getElementById('accept-cookies')
-  const consentCard = document.getElementById('cookie-consent-card')
+  const banner = document.getElementById('cookie-consent-card')
+  const btnAccept = document.getElementById('accept-cookies')
+  const btnReject = document.getElementById('reject-cookies')
 
-  // Se o botão for clicado
-  acceptButton.addEventListener('click', function () {
-    // Salvar a aceitação nos cookies (ou localStorage)
-    localStorage.setItem('cookies-accepted', 'true')
+  if (!banner || !btnAccept || !btnReject) return
 
-    // Esconder o card após o clique
-    consentCard.style.display = 'none'
+  const consent = localStorage.getItem(consentKey)
+
+  if (consent === 'accepted') {
+    carregarGoogleAnalytics()
+  } else if (!consent) {
+    banner.style.display = 'flex'
+  }
+
+  btnAccept.addEventListener('click', function () {
+    localStorage.setItem(consentKey, 'accepted')
+    carregarGoogleAnalytics()
+    banner.style.display = 'none'
   })
 
-  // Verificar se o usuário já aceitou os cookies
-  if (localStorage.getItem('cookies-accepted') === 'true') {
-    consentCard.style.display = 'none' // Esconde o card se já foi aceito
-  }
+  btnReject.addEventListener('click', function () {
+    localStorage.setItem(consentKey, 'rejected')
+    banner.style.display = 'none'
+  })
 })

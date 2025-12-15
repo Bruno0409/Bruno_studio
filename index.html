@@ -837,12 +837,27 @@
     <script src="js/main.js"></script>
 
 
-    <!-- aviso sobre o uso de cookies -->
+  <!-- Banner de Consentimento de Cookies -->
+<div id="cookie-consent-card" class="cookie-card">
+  <p>
+    Utilizamos cookies para melhorar sua experiência e analisar o tráfego do site.
+    <a href="/politicaPrivacidade.html" target="_blank">Saiba mais</a>.
+  </p>
 
-    <div id="cookie-consent-card" class="cookie-card">
-      <p>Este site usa cookies do Google para fornecer serviços e analisar o tráfego.<a href="/politicaPrivacidade.html" target="_blank"> Saiba mais.</a></p>
-      <button id="accept-cookies">OK, entendi.</button>
-    </div>
+  <div class="cookie-buttons">
+    <!-- Recusar com estilo de link -->
+    <button id="reject-cookies" class="btn-link">
+      Recusar
+    </button>
+
+    <!-- Aceitar com destaque -->
+    <button id="accept-cookies" class="btn-accept">
+      Aceitar
+    </button>
+  </div>
+</div>
+
+
 
 
 </body>
