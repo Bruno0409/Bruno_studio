@@ -549,7 +549,7 @@ padding: 20px;
 }
 
 /*****************************************************
- * Cookies Botão
+ * Cookies Botão – iOS SAFE
  *****************************************************/
 
 /* Banner */
@@ -570,8 +570,13 @@ padding: 20px;
   text-align: center;
   z-index: 9999;
   font-size: 0.8rem;
+
+  /* 🔑 iOS FIX */
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
+/* Texto */
 .cookie-card p {
   margin-bottom: 12px;
   font-size: 13px;
@@ -589,11 +594,18 @@ padding: 20px;
   align-items: center;
 }
 
-/* Recusar – link puro */
+/* Botões (CRÍTICO no iOS) */
+.cookie-card button {
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Recusar */
 .cookie-link {
   background: none;
   border: none;
-  padding: 0;
+  padding: 4px;
   margin: 0;
   color: #a9a9a9;
   font-size: 12px;
@@ -601,16 +613,7 @@ padding: 20px;
   text-decoration: underline;
 }
 
-.cookie-link:hover {
-  color: #ffffff;
-}
-
-/* Remove estilo padrão de foco de botão */
-.cookie-link:focus {
-  outline: none;
-}
-
-/* Aceitar – CTA */
+/* Aceitar */
 .btn-accept {
   background-color: #30355c;
   color: #ffffff;
@@ -623,10 +626,6 @@ padding: 20px;
   transition: background-color 0.3s, transform 0.1s;
 }
 
-.btn-accept:hover {
-  background-color: #1e244d;
-  transform: scale(1.03);
-}
 
 
 
