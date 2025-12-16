@@ -154,12 +154,25 @@ $(document).ready(function () {
 })
 
 // -------------------------
-// COOKIE / LGPD
+// COOKIE / LGPD - Ajustado para compatibilidade iOS
 // -------------------------
 
 const consentKey = 'cookieConsent'
 let gaCarregado = false
 
+// Função para verificar se o localStorage está disponível e seguro
+function storageDisponivel() {
+  try {
+    const teste = '__teste__'
+    localStorage.setItem(teste, teste)
+    localStorage.removeItem(teste)
+    return true
+  } catch (e) {
+    return false
+  }
+}
+
+// Carrega o Google Analytics
 function carregarGoogleAnalytics() {
   if (gaCarregado) return
   gaCarregado = true
@@ -174,9 +187,7 @@ function carregarGoogleAnalytics() {
     dataLayer.push(arguments)
   }
   gtag('js', new Date())
-  gtag('config', 'G-B5LVNNFY85', {
-    anonymize_ip: true
-  })
+  gtag('config', 'G-B5LVNNFY85', { anonymize_ip: true })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -186,22 +197,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!banner || !btnAccept || !btnReject) return
 
-  const consent = localStorage.getItem(consentKey)
+  // Verifica a disponibilidade do localStorage
+  const storageOk = storageDisponivel()
+  let consent = null
 
+  if (storageOk) {
+    consent = localStorage.getItem(consentKey)
+  }
+
+  // Se o consentimento já foi dado, carrega o Google Analytics
   if (consent === 'accepted') {
     carregarGoogleAnalytics()
   } else if (!consent) {
     banner.style.display = 'flex'
   }
 
+  // Aceitar cookies
   btnAccept.addEventListener('click', function () {
-    localStorage.setItem(consentKey, 'accepted')
+    if (storageOk) {
+      localStorage.setItem(consentKey, 'accepted')
+    }
     carregarGoogleAnalytics()
     banner.style.display = 'none'
   })
 
+  // Recusar cookies
   btnReject.addEventListener('click', function () {
-    localStorage.setItem(consentKey, 'rejected')
+    if (storageOk) {
+      localStorage.setItem(consentKey, 'rejected')
+    }
     banner.style.display = 'none'
   })
 })
