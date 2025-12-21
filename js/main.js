@@ -178,7 +178,7 @@ function carregarGoogleAnalytics() {
   gaCarregado = true
 
   const script = document.createElement('script')
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-B5LVNNFY85'
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-CBBFNWZB5F'
   script.async = true
   document.head.appendChild(script)
 
@@ -187,7 +187,7 @@ function carregarGoogleAnalytics() {
     dataLayer.push(arguments)
   }
   gtag('js', new Date())
-  gtag('config', 'G-B5LVNNFY85', { anonymize_ip: true })
+  gtag('config', 'G-CBBFNWZB5F', { anonymize_ip: true })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
